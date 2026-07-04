@@ -8,13 +8,15 @@ export default function EntryRow({ entry, sectionId }) {
       to={`/${sectionId}/${entry.slug}`}
     >
       <motion.img
-        className="aspect-[4/3] w-full rounded-lg object-cover"
+        className="aspect-[4/3] w-full rounded-xl object-cover"
+        layout
         layoutId={`${sectionId}-${entry.slug}-image`}
         src={entry.image}
         alt=""
       />
       <motion.span
         className="text-base font-normal text-[var(--text-heading)]"
+        layout
         layoutId={`${sectionId}-${entry.slug}-title`}
       >
         {entry.title}

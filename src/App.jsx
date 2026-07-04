@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, LayoutGroup, motion } from 'motion/react'
 import Layout from './components/Layout.jsx'
 import { profile } from './content.js'
 import DetailPage from './pages/DetailPage.jsx'
@@ -32,21 +32,17 @@ function AnimatedRoutes() {
   const location = useLocation()
 
   return (
-    <AnimatePresence initial={false}>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<RouteTransition><HomePage /></RouteTransition>} />
-        <Route path="/:sectionId" element={<RouteTransition><SectionPage /></RouteTransition>} />
-        <Route path="/:sectionId/:slug" element={<RouteTransition><DetailPage /></RouteTransition>} />
-      </Routes>
-    </AnimatePresence>
-  )
-}
-
-function RouteTransition({ children }) {
-  return (
-    <motion.div animate={{ opacity: 1 }} exit={{ opacity: 0 }} initial={{ opacity: 0 }} transition={{ duration: 0.16 }}>
-      {children}
-    </motion.div>
+    <LayoutGroup>
+      <AnimatePresence initial={false} mode="popLayout">
+        <motion.div key={location.pathname} layout className="w-full">
+          <Routes location={location}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:sectionId" element={<SectionPage />} />
+            <Route path="/:sectionId/:slug" element={<DetailPage />} />
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
+    </LayoutGroup>
   )
 }
 
