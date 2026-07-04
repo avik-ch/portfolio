@@ -7,7 +7,7 @@
   --text: #575279;
   --text-muted: #797593;
   --text-heading: #575279;
-  --font-junicode: Junicode, 'Times New Roman', serif;
+  --font-junicode: 'Junicode', 'Times New Roman', serif;
   --border: #dfdad9;
   --accent: #907aa9;
 
@@ -23,9 +23,9 @@
 }
 
 :root[data-theme='dark'] {
-  --base: #191724;
+  --base: #191717;
   --surface: #1f1d2e;
-  --overlay: #26233a;
+  --overlay: #262330;
   --muted: #6e6a86;
   --subtle: #908caa;
   --text: #e0def4;
@@ -77,4 +77,8 @@ img {
 
 .prose-content p+p {
   margin-top: 1rem;
+}
+
+.font-junicode {
+  font-family: var(--font-junicode);
 }

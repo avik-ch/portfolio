@@ -4,8 +4,8 @@ import EntryRow from './EntryRow.jsx'
 export default function EntrySection({ section, showViewAll = true }) {
   return (
     <section className="mt-12">
-      <div className="mb-3 flex items-baseline justify-between gap-4">
-        <h2 className="font-[var(--font-junicode)] text-2xl font-normal italic text-[var(--text-h)]">
+      <div className="mb-3 px-5 flex items-baseline justify-between gap-4">
+        <h2 className="font-junicode text-2xl font-black italic text-[var(--text-heading)]">
           {section.title}
         </h2>
         {showViewAll ? (

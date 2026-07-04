@@ -12,7 +12,7 @@ export const profile = {
 export const sections = [
   {
     id: 'research',
-    title: 'Research',
+    title: 'research',
     entries: [
       {
         slug: 'sample-research',
@@ -30,7 +30,7 @@ export const sections = [
   },
   {
     id: 'projects',
-    title: 'Projects',
+    title: 'projects',
     entries: [
       {
         slug: 'sample-project',
@@ -48,7 +48,7 @@ export const sections = [
   },
   {
     id: 'misc',
-    title: 'Misc',
+    title: 'misc',
     entries: [
       {
         slug: 'loose-note',

@@ -12,10 +12,7 @@ export default function DetailPage() {
   }
 
   return (
-    <article className="pt-10 sm:pt-16">
-      <Link className="text-sm text-[var(--text-muted)] hover:text-[var(--text-heading)]" to={`/${section.id}`}>
-        Back to {section.title.toLowerCase()}
-      </Link>
+    <article className="px-5 sm:pt-8">
       <div className="mt-8 grid gap-6 sm:grid-cols-[220px_1fr] sm:items-end">
         <motion.img
           className="aspect-[4/3] w-full rounded object-cover"

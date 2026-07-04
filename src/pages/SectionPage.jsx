@@ -12,7 +12,7 @@ export default function SectionPage() {
 
   return (
     <div className="pt-16 sm:pt-24">
-      <h1 className="font-[var(--font-junicode)] text-5xl font-normal italic text-[var(--text-h)]">
+      <h1 className="font-junicode text-5xl font-normal italic text-[var(--text-heading)]">
         {section.title}
       </h1>
       <EntrySection section={section} showViewAll={false} />
