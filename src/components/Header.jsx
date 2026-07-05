@@ -7,7 +7,7 @@ export default function Header({ theme, onToggleTheme }) {
         Avik
       </Link>
       <button
-        className="rounded-full px-1 py-1 text-sm text-[var(--text-muted)] hover:text-[var(--text-heading)] hover:bg-[var(--overlay)]"
+        className="rounded-full px-1 py-1 text-sm text-[var(--text-muted)] hover:text-[var(--text-heading)] hover:bg-[var(--overlay)] interactive-hover"
         type="button"
         onClick={onToggleTheme}
       >

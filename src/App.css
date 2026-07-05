@@ -15,3 +15,9 @@
   font-style: italic;
   font-display: swap;
 }
+
+@layer components {
+  .interactive-hover {
+    @apply cursor-pointer hover:bg-[var(--overlay)] transition-colors duration-200 ease-in-out;
+  }
+}

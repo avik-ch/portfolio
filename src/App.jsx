@@ -7,7 +7,7 @@ import SectionPage from './pages/SectionPage.jsx'
 import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme

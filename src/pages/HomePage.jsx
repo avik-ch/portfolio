@@ -23,7 +23,7 @@ export default function HomePage() {
           <button
             type="button"
             onClick={() => copyEmail('chakr258@umn.edu')}
-            className='cursor-pointer rounded-xl border-0 bg-transparent p-1 text-sm underline hover:bg-[var(--overlay)]'
+            className='rounded-xl border-0 p-1 text-sm underline interactive-hover'
           >
             chakr258 (at) umn [dot] edu
           </button>
@@ -32,7 +32,7 @@ export default function HomePage() {
             <button
               type="button"
               onClick={() => copyEmail('avikch@stanford.edu')}
-              className='cursor-pointer rounded-xl border-0 bg-transparent p-1 text-sm underline hover:bg-[var(--overlay)]'
+              className='rounded-xl border-0 p-1 text-sm underline interactive-hover'
             >
               avikch (at) stanford [dot] edu
             </button>

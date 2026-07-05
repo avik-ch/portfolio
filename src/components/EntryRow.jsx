@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 export default function EntryRow({ entry, sectionId }) {
   return (
     <Link
-      className="grid grid-cols-[24px_1fr_auto] py-2 rounded-3xl px-4 mx-1 items-center leading-[24px] gap-4 text-left hover:border-[var(--text-muted)] hover:bg-[var(--overlay)] sm:grid-cols-[96px_1fr_auto]"
+      className="grid grid-cols-[24px_1fr_auto] py-2 rounded-3xl px-4 mx-1 items-center leading-[24px] gap-4 text-left interactive-hover sm:grid-cols-[96px_1fr_auto]"
       to={`/${sectionId}/${entry.slug}`}
     >
       <img
