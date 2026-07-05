@@ -1,4 +1,5 @@
 import Header from './Header.jsx'
+import { motion } from 'motion/react'
 
 export default function Layout({ children, theme, onToggleTheme }) {
   return (
