@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import Layout from './components/Layout.jsx'
-import { profile } from './content.js'
 import DetailPage from './pages/DetailPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import SectionPage from './pages/SectionPage.jsx'
@@ -20,7 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Layout profile={profile} theme={theme} onToggleTheme={toggleTheme}>
+      <Layout theme={theme} onToggleTheme={toggleTheme}>
         <AppRoutes />
       </Layout>
     </BrowserRouter>

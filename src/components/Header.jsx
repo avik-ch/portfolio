@@ -1,17 +1,19 @@
 import { Link } from 'react-router'
 
-export default function Header({ name, theme, onToggleTheme }) {
+export default function Header({ theme, onToggleTheme }) {
   return (
-    <header className="flex items-center justify-between gap-4 mt-8 px-5 py-6">
+    <header className="flex items-center justify-between gap-4 mt-8 px-5 pt-6 pb-1">
       <Link className="text-3xl font-junicode italic font-black text-[var(--text-heading)]" to="/">
-        {name}
+        Avik
       </Link>
       <button
-        className="rounded-full border border-[var(--border)] px-3 py-1 text-sm text-[var(--text-muted)] hover:text-[var(--text-heading)]"
+        className="rounded-full px-1 py-1 text-sm text-[var(--text-muted)] hover:text-[var(--text-heading)] hover:bg-[var(--overlay)]"
         type="button"
         onClick={onToggleTheme}
       >
-        {theme === 'light' ? 'Dark' : 'Light'}
+        {theme === 'light' ?
+          <img src='/sun-svgrepo-com.svg' className='w-[32px] h-[32px]' /> :
+          <img src='/moon-full-moon-svgrepo-com.svg' className='w-[32px] h-[32px]' />}
       </button>
     </header>
   )

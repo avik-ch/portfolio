@@ -1,14 +1,3 @@
-export const profile = {
-  name: 'Avik',
-  intro:
-    'I am building a small portfolio for research, projects, and notes. This space is intentionally simple and easy to edit.',
-  links: [
-    { label: 'Email', href: 'mailto:hello@example.com' },
-    { label: 'GitHub', href: 'https://github.com/' },
-    { label: 'CV', href: '#' },
-  ],
-}
-
 export const sections = [
   {
     id: 'research',
