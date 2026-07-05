@@ -1,5 +1,6 @@
-import EntrySection from '../components/EntrySection.jsx'
-import { sections } from '../content.js'
+import Misc from './misc/misc.jsx'
+import Projects from './projects/projects.jsx'
+import Research from './research/research.jsx'
 
 export default function HomePage() {
   async function copyEmail(email) {
@@ -39,9 +40,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      {sections.map((section) => (
-        <EntrySection key={section.id} section={section} />
-      ))}
+      <div>
+        <Research />
+        <Projects />
+        <Misc />
+      </div>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { Navigate, useParams } from 'react-router'
-import { getEntry, getSection } from '../content.js'
+import { getEntry, getSection } from './section_helpers.js'
 
 export default function DetailPage() {
   const { sectionId, slug } = useParams()
@@ -9,6 +9,8 @@ export default function DetailPage() {
   if (!section || !entry) {
     return <Navigate replace to="/" />
   }
+
+  const Body = entry.Component
 
   return (
     <article className="px-5 sm:pt-8">
@@ -27,7 +29,7 @@ export default function DetailPage() {
         </div>
       </div>
       <div className="prose-content mt-12 border-t border-[var(--border)] pt-8">
-        <p>Add page content here.</p>
+        <Body />
       </div>
     </article>
   )

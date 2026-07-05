@@ -1,10 +1,10 @@
 import { Link } from 'react-router'
 import EntryRow from './EntryRow.jsx'
 
-export default function EntrySection({ section, showViewAll = true }) {
+export default function SectionRows({ section, showViewAll = true }) {
   return (
-    <section className="mt-12">
-      <div className="mb-3 px-5 flex items-baseline justify-between gap-4">
+    <section className="mt-8">
+      <div className="mb-2 px-5 flex items-baseline justify-between gap-4">
         <h2 className="font-junicode text-2xl font-black italic text-[var(--text-heading)]">
           {section.title}
         </h2>
