@@ -7,7 +7,7 @@ export default function Header({ name, theme, onToggleTheme }) {
         {name}
       </Link>
       <button
-        className="rounded-full border border-[var(--border)] px-3 py-1 text-sm text-[var(--text-muted)] transition hover:text-[var(--text-heading)]"
+        className="rounded-full border border-[var(--border)] px-3 py-1 text-sm text-[var(--text-muted)] hover:text-[var(--text-heading)]"
         type="button"
         onClick={onToggleTheme}
       >

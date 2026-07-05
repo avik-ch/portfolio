@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router'
-import { AnimatePresence, LayoutGroup, motion } from 'motion/react'
+import { BrowserRouter, Route, Routes } from 'react-router'
 import Layout from './components/Layout.jsx'
 import { profile } from './content.js'
 import DetailPage from './pages/DetailPage.jsx'
@@ -22,27 +21,19 @@ function App() {
   return (
     <BrowserRouter>
       <Layout profile={profile} theme={theme} onToggleTheme={toggleTheme}>
-        <AnimatedRoutes />
+        <AppRoutes />
       </Layout>
     </BrowserRouter>
   )
 }
 
-function AnimatedRoutes() {
-  const location = useLocation()
-
+function AppRoutes() {
   return (
-    <LayoutGroup>
-      <AnimatePresence initial={false} mode="popLayout">
-        <motion.div key={location.pathname} layout className="w-full">
-          <Routes location={location}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/:sectionId" element={<SectionPage />} />
-            <Route path="/:sectionId/:slug" element={<DetailPage />} />
-          </Routes>
-        </motion.div>
-      </AnimatePresence>
-    </LayoutGroup>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/:sectionId" element={<SectionPage />} />
+      <Route path="/:sectionId/:slug" element={<DetailPage />} />
+    </Routes>
   )
 }
 
