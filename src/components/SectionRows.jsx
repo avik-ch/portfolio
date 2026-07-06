@@ -1,12 +1,26 @@
 import { Link } from 'react-router'
+import { motion } from 'motion/react'
 import EntryRow from './EntryRow.jsx'
+import { pageItemVariants } from './pageAnimation.js'
+
+const sectionVariants = {
+  hidden: pageItemVariants.hidden,
+  visible: {
+    ...pageItemVariants.visible,
+    transition: {
+      ...pageItemVariants.visible.transition,
+      staggerChildren: 0.08,
+      delayChildren: 0.08,
+    },
+  },
+}
 
 export default function SectionRows({ section, showViewAll = true, numRows }) {
   const entries = typeof numRows === 'number' ? section.entries.slice(0, numRows) : section.entries
 
   return (
-    <section className="mt-8">
-      <div className="mb-2 px-5 flex items-baseline justify-between gap-4">
+    <motion.section className="mt-8" variants={sectionVariants}>
+      <motion.div className="mb-2 px-5 flex items-baseline justify-between gap-4" variants={pageItemVariants}>
         <h2 className="font-junicode text-2xl font-black italic text-[var(--text-heading)]">
           {section.title}
         </h2>
@@ -15,12 +29,14 @@ export default function SectionRows({ section, showViewAll = true, numRows }) {
             View all
           </Link>
         ) : null}
-      </div>
+      </motion.div>
       <div className='flex flex-col gap-1'>
         {entries.map((entry) => (
-          <EntryRow entry={entry} key={entry.slug} sectionId={section.id} />
+          <motion.div key={entry.slug} variants={pageItemVariants}>
+            <EntryRow entry={entry} sectionId={section.id} />
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   )
 }

@@ -1,3 +1,5 @@
+import { motion } from 'motion/react'
+import { pageContainerVariants, pageItemVariants } from '../components/pageAnimation.js'
 import Misc from './misc/misc.jsx'
 import Projects from './projects/projects.jsx'
 import Research from './research/research.jsx'
@@ -8,8 +10,8 @@ export default function HomePage() {
   }
 
   return (
-    <>
-      <section>
+    <motion.div variants={pageContainerVariants}>
+      <motion.section variants={pageItemVariants}>
         <div className="flex flex-wrap gap-x-3 gap-y-2 px-5 items-center text-sm">
           <a href="https://github.com/avik-ch" target="_blank" rel="noreferrer" aria-label="GitHub">
             <span aria-hidden="true" className="svg-icon h-[32px] w-[22px]" style={{ maskImage: "url('/github-svgrepo-com.svg')", WebkitMaskImage: "url('/github-svgrepo-com.svg')", }} />
@@ -39,12 +41,12 @@ export default function HomePage() {
             </button>
           </div>
         </div>
-      </section>
-      <div>
+      </motion.section>
+      <motion.div variants={pageContainerVariants}>
         <Research numRows={1} />
         <Projects />
         <Misc />
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   )
 }

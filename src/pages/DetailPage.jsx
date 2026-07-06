@@ -1,4 +1,6 @@
 import { Navigate, useParams } from 'react-router'
+import { motion } from 'motion/react'
+import { pageContainerVariants, pageItemVariants } from '../components/pageAnimation.js'
 import { getEntry, getSection } from './section_helpers.js'
 
 export default function DetailPage() {
@@ -13,8 +15,8 @@ export default function DetailPage() {
   const Body = entry.Component
 
   return (
-    <article className="px-5 sm:pt-8">
-      <div className="mt-8 grid gap-6 flex flex-col">
+    <motion.article className="px-5 sm:pt-8" variants={pageContainerVariants}>
+      <motion.div className="mt-8 grid gap-6 flex flex-col" variants={pageItemVariants}>
         <img
           className="aspect-[4/3] w-full rounded-3xl object-cover"
           src={entry.image}
@@ -27,10 +29,10 @@ export default function DetailPage() {
             {entry.title}
           </h1>
         </div>
-      </div>
-      <div className="prose-content mt-12 border-t border-[var(--border)] pt-8">
+      </motion.div>
+      <motion.div className="prose-content mt-12 border-t border-[var(--border)] pt-8" variants={pageItemVariants}>
         <Body />
-      </div>
-    </article>
+      </motion.div>
+    </motion.article>
   )
 }
