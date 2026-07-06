@@ -3,14 +3,25 @@ import { pageContainerVariants, pageItemVariants } from '../components/pageAnima
 import Misc from './misc/misc.jsx'
 import Projects from './projects/projects.jsx'
 import Research from './research/research.jsx'
+import toast, { Toaster } from 'react-hot-toast'
+
 
 export default function HomePage() {
   async function copyEmail(email) {
     await navigator.clipboard.writeText(email)
+    toast('Email copied to clipboard', {
+      duration: 2500,
+      style: {
+        background: 'var(--surface)',
+        color: 'var(--text-heading)',
+        border: '1px solid var(--border)',
+      },
+    })
   }
 
   return (
     <motion.div variants={pageContainerVariants}>
+      <Toaster />
       <motion.section variants={pageItemVariants}>
         <div className="flex flex-wrap gap-x-3 gap-y-2 px-5 items-center text-sm">
           <a href="https://github.com/avik-ch" target="_blank" rel="noreferrer" aria-label="GitHub">
