@@ -41,7 +41,7 @@ export default function HomePage() {
         </div>
       </section>
       <div>
-        <Research />
+        <Research numRows={1} />
         <Projects />
         <Misc />
       </div>

@@ -23,8 +23,8 @@ const researchSection = {
   ],
 }
 
-export default function Research({ showViewAll = true }) {
-  return <SectionRows section={researchSection} showViewAll={showViewAll} />
+export default function Research({ showViewAll = true, numRows }) {
+  return <SectionRows section={researchSection} showViewAll={showViewAll} numRows={numRows} />
 }
 
 Research.section = researchSection

@@ -15,8 +15,8 @@ const miscSection = {
   ],
 }
 
-export default function Misc({ showViewAll = true }) {
-  return <SectionRows section={miscSection} showViewAll={showViewAll} />
+export default function Misc({ showViewAll = true, numRows }) {
+  return <SectionRows section={miscSection} showViewAll={showViewAll} numRows={numRows} />
 }
 
 Misc.section = miscSection

@@ -23,8 +23,8 @@ const projectsSection = {
   ],
 }
 
-export default function Projects({ showViewAll = true }) {
-  return <SectionRows section={projectsSection} showViewAll={showViewAll} />
+export default function Projects({ showViewAll = true, numRows }) {
+  return <SectionRows section={projectsSection} showViewAll={showViewAll} numRows={numRows} />
 }
 
 Projects.section = projectsSection
